@@ -585,7 +585,7 @@ func TestClosedMediaPlaylist(t *testing.T) {
 // Create new media playlist as sliding playlist.
 func TestLargeMediaPlaylistWithParallel(t *testing.T) {
 	testCount := 10
-	expect, err := ioutil.ReadFile("sample-playlists/media-playlist-large.m3u8")
+	expect, err := ioutil.ReadFile("sample-playlists/media-playlist-large-test.m3u8")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -594,7 +594,7 @@ func TestLargeMediaPlaylistWithParallel(t *testing.T) {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
-			f, err := os.Open("sample-playlists/media-playlist-large.m3u8")
+			f, err := os.Open("sample-playlists/media-playlist-large-test.m3u8")
 			if err != nil {
 				t.Fatal(err)
 			}
